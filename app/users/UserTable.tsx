@@ -1,7 +1,5 @@
 import React from 'react';
-import TableNameHeader from './TableNameHeader';
 import Link from 'next/link';
-import TableBody from './TableBody';
 import { sort } from 'fast-sort';
 
 interface User {

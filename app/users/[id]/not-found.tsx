@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const UserNotFoundPage = () => {
-  return (
-    <div>This user does not exist</div>
-  )
-}
+  return <div>This user does&apos;t exist</div>;
+};
 
-export default UserNotFoundPage
+export default UserNotFoundPage;

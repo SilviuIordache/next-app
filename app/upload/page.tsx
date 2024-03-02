@@ -29,7 +29,11 @@ const UploadPage = () => {
         />
       )}
 
-      <CldUploadWidget uploadPreset="lhandkzd" onUpload={handleUpload}>
+      <CldUploadWidget
+        uploadPreset="lhandkzd"
+        onUpload={handleUpload}
+        options={{ sources: ['local', 'camera'], multiple: false }}
+      >
         {({ open }) => (
           <button className="btn btn-primary" onClick={() => open()}>
             Upload

@@ -10,6 +10,11 @@ const credentialsProvider = CredentialsProvider({
       type: 'email',
       placeholder: 'john.doe@gmail.com',
     },
+    name: {
+      label: 'Username',
+      type: 'text',
+      placeholder: 'JohnDoe123',
+    },
     password: {
       label: 'Password',
       type: 'Password',

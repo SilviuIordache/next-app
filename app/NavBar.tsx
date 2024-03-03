@@ -9,27 +9,31 @@ interface NavPage {
 const NavBar = () => {
   const pages: NavPage[] = [
     {
-      route: '',
+      route: '/',
       name: 'Home',
     },
     {
-      route: 'users',
+      route: '/users',
       name: 'Users',
     },
     {
-      route: 'admin',
+      route: '/admin',
       name: 'Admin',
     },
     {
-      route: 'products',
+      route: '/products',
       name: 'Products',
+    },
+    {
+      route: '/api/auth/signin',
+      name: 'Login',
     },
   ];
 
   return (
     <div className="bg-slate-200 p-5 mb-5">
       {pages.map((page, index) => (
-        <Link key={index} href={`/${page.route}`} className="mr-4">
+        <Link key={index} href={page.route} className="mr-4">
           {page.name}
         </Link>
       ))}

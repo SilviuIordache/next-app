@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.app.json --noEmit"
+
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",

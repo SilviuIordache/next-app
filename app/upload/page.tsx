@@ -3,19 +3,22 @@
 import React, { useState } from 'react';
 import { CldUploadWidget, CldImage } from 'next-cloudinary';
 
-interface CloudinaryResult {
-  public_id: string;
+interface CloudinaryUploadResult {
+  event: string;
+  info: {
+    public_id: string;
+    // Include other fields you might use
+  };
 }
+
 
 const UploadPage = () => {
   const [publicId, setPublicId] = useState('');
 
-  const handleUpload = (result) => {
+  const handleUpload = (result: CldUploadEventCallbackNoOptions) => {
     if (result.event !== 'success') return;
 
-    const info = result.info as CloudinaryResult;
-
-    setPublicId(info.public_id);
+    setPublicId(result.info.public_id);
   };
 
   return (

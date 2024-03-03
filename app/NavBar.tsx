@@ -31,24 +31,33 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="bg-slate-200 p-5 mb-5 flex">
-      {pages.map((page, index) => (
-        <Link key={index} href={page.route} className="mr-4">
-          {page.name}
-        </Link>
-      ))}
-      {status === 'loading' && <div>Loading...</div>}
-      {status === 'authenticated' && (
-        <div>
-          {session.user!.name}
-          <Link href="/api/auth/signout" className="ml-4">
-            Sign Out
+    <div className="bg-slate-200 p-5 mb-5 flex justify-between">
+      <div>
+        {pages.map((page, index) => (
+          <Link key={index} href={page.route} className="mr-4">
+            {page.name}
           </Link>
-        </div>
-      )}
-      {status === 'unauthenticated' && (
-        <Link href="/api/auth/signin">Sign in</Link>
-      )}
+        ))}
+      </div>
+      <div className="flex">
+        {status === 'loading' && <div>Loading...</div>}
+        {status === 'authenticated' && (
+          <div className="flex">
+            {session.user!.name}
+            <div className="mx-3">|</div>
+            <Link href="/api/auth/signout">
+              Sign Out
+            </Link>
+          </div>
+        )}
+        {status === 'unauthenticated' && (
+          <div className="flex">
+            <Link href="/api/auth/signin">Sign in</Link>
+            <div className="mx-3">|</div>
+            <Link href="/register">Register</Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

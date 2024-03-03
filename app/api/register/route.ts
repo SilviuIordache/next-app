@@ -11,6 +11,8 @@ const schema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('got here');
+
     const body = await request.json();
 
     const validation = schema.safeParse(body);

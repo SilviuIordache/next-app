@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import schema from '../schema';
 import prisma from '@/prisma/client';
 
@@ -7,7 +7,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   if (!user) {
@@ -33,7 +33,7 @@ export async function PUT(
 
   // Fetch user with the given id
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   // If user not found, return a 404 response
@@ -43,7 +43,7 @@ export async function PUT(
 
   // Update user with the given id
   const updatedUser = await prisma.user.update({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
     data: { name: body.name, email: body.email },
   });
 
@@ -57,7 +57,7 @@ export async function DELETE(
 ) {
   // Fetch user with the given id
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   // If user not found, return a 404 response
@@ -66,7 +66,7 @@ export async function DELETE(
   }
 
   // Delete user with the given id
-  await prisma.user.delete({ where: { id: parseInt(params.id) } });
+  await prisma.user.delete({ where: { id: params.id } });
 
   // Return a 204 response
   return NextResponse.json({});

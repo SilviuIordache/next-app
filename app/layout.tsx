@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import NavBar from './NavBar';
 import AuthProvider from './auth/Provider';
-import MainPageScripts from '../scripts/MainPageScripts';
 import GoogleAnalyticsScript from '@/scripts/GoogleAnalyticsScript';
 
 // const inter = Inter({ subsets: ['latin'] });

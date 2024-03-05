@@ -10,15 +10,15 @@ export default function Register() {
 
   const [errors, setErrors] = useState({ email: '', name: '', password: '' });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submit action
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent the default form submit action
 
     setErrors({ email: '', name: '', password: '' });
 
     const result = schema.safeParse({ email, name, password });
 
     if (!result.success) {
-      const errorMap = {};
+      const errorMap: any = {};
       result.error.issues.forEach((issue) => {
         errorMap[issue.path[0]] = issue.message;
       });
@@ -31,7 +31,7 @@ export default function Register() {
       const res = await axios.post('/api/register', payload);
 
       console.log('Registration successful', res.data);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Registration failed', error.response.data);
     }
   };

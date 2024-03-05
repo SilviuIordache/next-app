@@ -1,9 +1,10 @@
+'use client';
 import React from 'react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
-export default async function ProfilePage() {
-  const session = await getServerSession(authOptions);
+import { useSession } from 'next-auth/react';
+
+export default function ProfilePage() {
+  const { data: session } = useSession();
 
   return (
     <div>

@@ -1,8 +1,14 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 // import coffee from '@/public/images/coffee.png';
+
+export const metadata: Metadata = {
+  title: 'NextApp: Home page',
+  description: 'This is the home page',
+};
 
 export default async function Home() {
   const session = await getServerSession(authOptions);

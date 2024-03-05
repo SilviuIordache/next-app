@@ -9,12 +9,12 @@ const ImageRendering = () => {
       <div>{'Here are some images'}</div>
 
       {/* static image */}
-      <div className="h-20">
+      <div className="relative h-20">
         <Image src={coffee} alt="coffee" />
       </div>
 
       {/* remote image*/}
-      <div className="h-20">
+      <div className="relative h-20">
         <Image
           src="https://bit.ly/react-cover"
           alt="coffee"

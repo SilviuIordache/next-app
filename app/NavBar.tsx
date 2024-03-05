@@ -17,6 +17,10 @@ const NavBar = () => {
       name: 'Home',
     },
     {
+      route: '/image-rendering',
+      name: 'Image Rendering',
+    },
+    {
       route: '/users',
       name: 'Users',
     },
@@ -27,6 +31,10 @@ const NavBar = () => {
     {
       route: '/products',
       name: 'Products',
+    },
+    {
+      route: '/upload',
+      name: 'Upload',
     },
   ];
 
@@ -43,11 +51,9 @@ const NavBar = () => {
         {status === 'loading' && <div>Loading...</div>}
         {status === 'authenticated' && (
           <div className="flex">
-            {session.user!.name}
+            <Link href="/users/profile">{session.user!.name}</Link>
             <div className="mx-3">|</div>
-            <Link href="/api/auth/signout">
-              Sign Out
-            </Link>
+            <Link href="/api/auth/signout">Sign Out</Link>
           </div>
         )}
         {status === 'unauthenticated' && (

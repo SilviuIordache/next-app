@@ -7,15 +7,15 @@ interface Props {
   };
 }
 
-// Dynamic metadata
-export async function generateMetadata({
-  params,
-  searchParams,
-}: Props): Promise<Metadata> {
-  return {
-    title: `User ${params.id} Detail Page`,
-  };
-}
+// // Dynamic metadata
+// export async function generateMetadata({
+//   params,
+//   searchParams,
+// }: Props): Promise<Metadata> {
+//   return {
+//     title: `User ${params.id} Detail Page`,
+//   };
+// }
 
 const UserDetailPage = ({ params: { id } }: Props) => {
   if (id > 10) notFound();

@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import {
   Html,
   Body,
@@ -23,14 +23,6 @@ const WelcomeTemplate = ({ name }: { name: string }) => {
       </Tailwind>
     </Html>
   );
-};
-
-const body: CSSProperties = {
-  background: '#fff',
-};
-
-const heading: CSSProperties = {
-  fontSize: '32px',
 };
 
 export default WelcomeTemplate;

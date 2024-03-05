@@ -1,6 +1,6 @@
-import CredentialsProvider from 'next-auth/providers/credentials';
-import bcrypt from 'bcrypt';
 import prisma from '@/prisma/client';
+import bcrypt from 'bcrypt';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 const credentialsProvider = CredentialsProvider({
   name: 'Credentials',

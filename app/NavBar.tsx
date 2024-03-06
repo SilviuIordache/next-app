@@ -13,10 +13,6 @@ const NavBar = () => {
 
   const pages: NavPage[] = [
     {
-      route: '/',
-      name: 'Home',
-    },
-    {
       route: '/image-rendering',
       name: 'Image Rendering',
     },
@@ -41,11 +37,15 @@ const NavBar = () => {
   return (
     <div className="bg-slate-200 p-5 mb-5 flex justify-between">
       <div>
-        {pages.map((page, index) => (
-          <Link key={index} href={page.route} className="mr-4">
-            {page.name}
-          </Link>
-        ))}
+        <Link className="mr-4" href="/">
+          Home
+        </Link>
+        {status === 'authenticated' &&
+          pages.map((page, index) => (
+            <Link key={index} href={page.route} className="mr-4">
+              {page.name}
+            </Link>
+          ))}
       </div>
       <div className="flex">
         {status === 'loading' && <div>Loading...</div>}

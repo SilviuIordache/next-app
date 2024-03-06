@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1>Hello World</h1>
+      <h1>Hello Worlds</h1>
       <button onClick={sortUsers}>Sort</button>
     </main>
   );
